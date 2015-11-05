@@ -1,0 +1,7 @@
+footer#footer
+  if theme.sidebar === 'bottom'
+    != partial('_partial/sidebar')
+  div.outer
+    div#footer-info.inner
+      | &copy; #{date(new Date(), 'YYYY')} #{config.author || config.title} #[br]
+      | Powered by #[a(href='http://hexo.io/' target='_blank') Hexo]

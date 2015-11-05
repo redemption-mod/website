@@ -1,0 +1,40 @@
+meta(charset='utf-8')
+meta(name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1')
+
+- var title = page.title
+
+if is_archive()
+  - title = 'Archives'
+
+  if is_month()
+    -
+      var dat = new Date()
+      dat.setYear(page.year)
+      dat.setMonth(page.month - 1)
+      dat = date(dat, 'MMM YYYY')
+
+    - title += ': ' + dat
+  else if is_year()
+    - title += ': ' + page.year
+
+else if is_category()
+  - title = 'Category: ' + page.category
+else if is_tag()
+  - title = 'Tag: ' + page.tag
+
+
+- var pagetitle = (title ? title + ' | ' : '')
+title= pagetitle + config.title
+
+!= open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id, type: theme.fb_type})
+
+if theme.rss
+  link(rel='alternative' href=theme.rss title=config.title type='application/atom+xml')
+if theme.favicon
+  link(rel='icon' href=theme.favicon)
+
+link(href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css')
+
+!= css('css/style')
+
+!= partial('google-analytics')

@@ -1,0 +1,8 @@
+if site.posts.length
+  div.widget-wrap
+    h3.widget-title Recents
+    div.widget
+      ul
+        for post, i in site.posts.sort('date', -1).limit(5).toArray()
+          li
+            a(href=url_for(post.path))= post.title || theme.no_title

@@ -1,0 +1,26 @@
+if pagination == 2
+  for post in page.posts.toArray()
+    != partial('article', {post: post, index: true})
+  if page.total > 1
+    nav#page-nav
+      != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;'})
+else
+  - var last
+  for post, i in page.posts.toArray()
+    - var year = post.date.year()
+    if last != year
+      if last != null
+        </div></section>
+      - last = year
+      <section class="archives-wrap">
+      <div class="archive-year-wrap">
+      <a href="#{url_for('archives/' + year)}" class="archive-year">#{year}</a>
+      <div class="archives">
+    != partial('archive-post', {post: post, even: i % 2 == 0})
+
+  if page.posts.length
+    </div></section>
+
+  if page.total > 1
+    nav#page-nav
+      != paginator({prev_text: '&laquo; Prev', next_text: 'Next &raquo;'})

@@ -1,0 +1,9 @@
+if post.link
+  h1(itemprop='name')
+    a(href=url_for(post.link) target='_blank' itemprop='url' class=class_name)= post.title
+else if post.title
+  if index
+    h1(itemprop='name')
+      a(href=url_for(post.path) class=class_name)= post.title
+  else
+    h1(itemprop='name' class=class_name)= post.title

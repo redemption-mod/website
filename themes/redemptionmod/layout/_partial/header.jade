@@ -1,0 +1,22 @@
+header#header
+  div#banner
+  div#header-outer.outer
+    div#header-title.inner
+      h1#logo-wrap
+        a(href=url_for())#logo= config.title
+      if theme.subtitle
+        h2#subtitle-wrap
+          a(href=url_for())#subtitle= theme.subtitle
+
+    div#header-inner.inner
+      nav#main-nav
+        a#main-nav-toggle.nav-icon
+        for link, item in theme.menu
+          a(href=url_for(link)).main-nav-link= item
+      nav#sub-nav
+        if theme.rss
+          a(href=theme.rss title="RSS Feed")#nav-rss-link.nav-icon
+        a(title="Search")#nav-search-btn.nav-icon &#xF002;
+      div#search-form-wrap
+        != search_form({button: '&#xF002;'})
+

@@ -1,0 +1,31 @@
+article(id='#{post.layout}-#{post.slug}' class='article article-type-#{post.layout}' itemscope itemprop='blogPost')
+  div.article-meta
+    != partial('post/date', {class_name: 'article-date', date_format: null})
+    != partial('post/category')
+  div.article-inner
+    != partial('post/gallery')
+    if post.link || post.title
+      header.article-header
+        != partial('post/title', {class_name: 'article-title'})
+
+    div(itemprop='articleBody').article-entry
+      if post.excerpt && index
+        != post.excerpt
+        if theme.excerpt_link
+          p.article-more-link
+            a(href='#{url_for(post.path)}#more')= theme.excerpt_link
+      else
+        != post.content
+
+    footer.article-footer
+      a(data-url=post.permalink data-id=post._id).article-share-link Share
+      if post.comments && config.disqus_shortname
+        a(href='#{post.permalink}#disqus_thread').article-comment-link Comments
+      != partial('post/tag')
+  if !index
+    != partial('post/nav')
+
+if !index && post.comments && config.disqus_shortname
+  section#comments
+    div#disqus_thread
+      noscript Please enable JavaScript to view the <a href='//disqus.com/?ref_noscript'>comments powered by Disqus.</a>

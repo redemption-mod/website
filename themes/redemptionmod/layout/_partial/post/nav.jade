@@ -1,0 +1,11 @@
+if post.prev || post.next
+  nav#article-nav
+    if post.prev
+      a(href=url_for(post.prev.path))#article-nav-newer.article-nav-link-wrap
+        strong.article-nav-caption Newer
+        div.article-nav-title= post.prev.title || theme.no_title
+
+    if post.next
+      a(href=url_for(post.next.path))#article-nav-older.article-nav-link-wrap
+        strong.article-nav-caption Older
+        div.article-nav-title= post.next.title || theme.no_title
