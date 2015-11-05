@@ -13,6 +13,8 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
+- connection_information
+- links
 - archive
 - category
 - recent_posts
