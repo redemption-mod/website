@@ -1,3 +1,20 @@
+include ../_mixins/all.jade
+
 nav#mobile-nav
-  for link, item in theme.menu
-    a(href=link).mobile-nav-link= item
+  ul.mobile-nav-list
+    - var current, newlink
+    for link, item in theme.menu
+      if typeof link === 'string'
+        +get_current_class(link)
+        li
+          a(href=url_for(link) class='mobile-nav-link #{current}')= item
+      else
+        +get_current_class(link.LINK)
+        li.has-subnav
+          a(href=url_for(link.LINK) class='mobile-nav-link #{current}')= item
+          ul.mobile-nav-sublist
+            for sublink, subitem in link
+              if subitem != 'LINK'
+                +get_current_class(sublink)
+                li
+                  a(href=url_for(sublink) class='mobile-nav-link mobile-subnav #{current}') - #{subitem}

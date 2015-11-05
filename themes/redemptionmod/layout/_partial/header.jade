@@ -1,3 +1,5 @@
+include ../_mixins/all.jade
+
 header#header
   div#banner
   div#header-outer.outer
@@ -11,12 +13,29 @@ header#header
     div#header-inner.inner
       nav#main-nav
         a#main-nav-toggle.nav-icon
-        for link, item in theme.menu
-          a(href=url_for(link)).main-nav-link= item
+
+        ul.main-nav-list
+          - var current, newlink
+          for link, item in theme.menu
+            if typeof link === 'string'
+              +get_current_class(link)
+              li
+                a(href=url_for(link) class='main-nav-link #{current}')= item
+            else
+              +get_current_class(link.LINK)
+              li.has-subnav
+                a(href=url_for(link.LINK) class='main-nav-link #{current}')= item
+                ul.main-nav-sublist
+                  for sublink, subitem in link
+                    if subitem != 'LINK'
+                      +get_current_class(sublink)
+                      li
+                        a(href=url_for(sublink) class='main-nav-link subnav #{current}')= subitem
+
       nav#sub-nav
         if theme.rss
           a(href=theme.rss title="RSS Feed")#nav-rss-link.nav-icon
-        a(title="Search")#nav-search-btn.nav-icon &#xF002;
+        a(title="Search")#nav-search-btn.nav-icon
       div#search-form-wrap
         != search_form({button: '&#xF002;'})
 

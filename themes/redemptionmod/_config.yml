@@ -3,6 +3,24 @@ menu:
   Home: /
   Archives: /archives
   Pages: /pages
+  Sublevel test:
+    LINK: /archives
+    Under: /under
+    Under2: /archives
+  After sub: /aftersub
+  Archives1: /archives
+  Pages1: /pages
+  Sublevel:
+    LINK: /testlevel2
+    Under: /under
+    Under21: /foo
+    1Under1: /foo
+    2Under1: /foo
+    3Under1: /foo
+    1Under21: /foo
+    2Under21: /foo
+    3Under21: /foo
+  After sub2: /aftersub
 rss: /atom.xml
 
 # Content

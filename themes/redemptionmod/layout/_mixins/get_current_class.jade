@@ -1,0 +1,8 @@
+mixin get_current_class(link)
+  -
+    newlink = link.replace(/^\/+|\/+$/g, '')
+    current = is_current(newlink) ? 'current' : ''
+    if(link === '/' && !is_home()) {
+      current = false
+    }
+
