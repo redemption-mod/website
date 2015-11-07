@@ -92,9 +92,10 @@
 
       var alt = this.alt;
 
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+      if(!$(this).hasClass('no-fancybox')) {
+        if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+        $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+      }
     });
 
     $(this).find('.fancybox').each(function(){
