@@ -165,3 +165,8 @@ feed:
 ## Docs: https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
 sitemap:
   path: sitemap.xml
+
+# hexo-toc config
+## Docs: https://github.com/bubkoo/hexo-toc
+toc:
+  maxDepth: 3
