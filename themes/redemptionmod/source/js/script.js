@@ -139,13 +139,14 @@
 
   var qsRegex;
 
-  //
   var $iso_spells = $('.spells-wrapper').isotope({
     itemSelector: '.spell',
     layoutMode: 'masonry',
     filter: function() {
-      // Search only on the name
-      var searchtext = $(this).find('.name').text();
+      // Search only on the name and level
+      var searchtext = $(this).find('.name').text() +
+                       $(this).find('.spell-level').text();
+
       return qsRegex ? searchtext.match( qsRegex ) : true;
     },
     getSortData: {
