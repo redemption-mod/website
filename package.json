@@ -16,6 +16,7 @@
     "hexo-generator-search": "^1.0.2",
     "hexo-generator-seo-friendly-sitemap": "0.0.11",
     "hexo-generator-tag": "^0.1.1",
+    "hexo-html-minifier": "0.0.1",
     "hexo-imagemin": "^0.1.0",
     "hexo-more-css": "^0.2.0",
     "hexo-notify": "0.0.1",
@@ -24,6 +25,7 @@
     "hexo-renderer-markdown-it": "^3.4.0",
     "hexo-renderer-yasr": "github:celsomiranda/hexo-renderer-yasr",
     "hexo-server": "^0.1.2",
+    "hexo-uglify": "0.0.3",
     "jstransformer-marked": "^1.0.1"
   },
   "devDependencies": {},

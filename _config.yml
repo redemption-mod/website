@@ -100,10 +100,31 @@ yasr:
     sourceRoot: ''
     basePath: 'css/'
 
+# hexo-more-css config
+## Docs: https://github.com/vseventer/hexo-more-css
 more_css:
-  enable: false
-  exclude: '*.min.css'
-  radical: true
+  enable: true
+  exclude: \*.min.css
+  radical: false
+
+# hexo-uglify config
+## Docs: https://github.com/hexojs/hexo-uglify
+uglify:
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - \*.min.js
+
+# hexo-html-minifier config
+## Docs: https://github.com/hexojs/hexo-html-minifier
+html_minifier:
+  exclude:
+  removeComments: true
+  collapseWhitespace: true
+  conservativeCollapse: true
+  removeEmptyAttributes: true
+
 
 # Markdown-it config
 ## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
