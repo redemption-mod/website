@@ -1,0 +1,13 @@
+mixin spell(name, spell_level, requirements)
+  - name = name || 'Spell name'
+  div.spell
+    div.spell-inner&attributes(attributes)
+      div.clearfix.meta-wrapper
+        h4.name!= name
+        if spell_level
+          p.spell-level!= spell_level
+      if requirements
+        p.requirements!= requirements
+      if block
+        block
+

@@ -134,4 +134,68 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+  // Custom part
+
+  var qsRegex;
+
+  //
+  var $iso_spells = $('.spells-wrapper').isotope({
+    itemSelector: '.spell',
+    layoutMode: 'masonry',
+    filter: function() {
+      // Search only on the name
+      var searchtext = $(this).find('.name').text();
+      return qsRegex ? searchtext.match( qsRegex ) : true;
+    },
+    getSortData: {
+      name: '.name',
+      spelllevel: '.spell-level'
+    },
+    sortBy: 'spelllevel',
+    sortAscending: false
+  });
+
+  var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+    qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+    $iso_spells.isotope();
+  }, 200 ) );
+
+  $('.sort-by-button-group').on( 'click', 'button', function() {
+    var sortValue = $(this).attr('data-sort-value');
+    var sortAscending = true;
+    var hadAscending = $(this).hasClass('ascending');
+
+    $('.sort-by-button-group button').removeClass(
+      'is-checked').removeClass('ascending');
+
+    if (hadAscending) {
+      sortAscending = false;
+      $(this).removeClass('ascending');
+    } else {
+      $(this).addClass('ascending');
+    }
+
+    $(this).addClass('is-checked');
+
+    $iso_spells.isotope({
+      sortBy: sortValue,
+      sortAscending: sortAscending
+    });
+  });
+
 })(jQuery);
+
+function debounce( fn, threshold ) {
+  var timeout;
+  return function debounced() {
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    function delayed() {
+      fn();
+      timeout = null;
+    }
+    timeout = setTimeout( delayed, threshold || 100 );
+  };
+}

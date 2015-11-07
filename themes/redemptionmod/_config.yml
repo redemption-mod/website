@@ -1,26 +1,28 @@
 # Header
 menu:
   Home: /
-  Archives: /archives
-  Pages: /pages
-  Sublevel test:
-    LINK: /archives
-    Under: /under
-    Under2: /archives
-  After sub: /aftersub
-  Archives1: /archives
-  Pages1: /pages
-  Sublevel:
-    LINK: /testlevel2
-    Under: /under
-    Under21: /foo
-    1Under1: /foo
-    2Under1: /foo
-    3Under1: /foo
-    1Under21: /foo
-    2Under21: /foo
-    3Under21: /foo
-  After sub2: /aftersub
+  Game characteristics:
+    LINK: /game-characteristics
+    Player vs player: /game-characteristics/player-vs-player
+    Clans: /game-characteristics/clans
+    Experience points: /game-characteristics/experience-points
+    Map of Dominia: /game-characteristics/map-of-dominia
+    Remorts: /game-characteristics/remorts
+  Game changes:
+    LINK: /game-changes
+    Spell changes: /game-changes/spell-changes
+    Feat changes: /game-changes/feat-changes
+  Server information:
+    LINK: /server-information
+    Connection information: /server-information/connection-information
+    Server requirements: /server-information/server-requirements
+    History: /server-information/server-history
+    Meet the team: /server-information/meet-the-team
+  Guides, tips and tricks:
+    LINK: /guides
+    NWN setup tips: /guides/test
+
+
 rss: /atom.xml
 
 # Content
@@ -29,15 +31,11 @@ no_title: (no title)
 fancybox: true
 
 # Sidebar
-sidebar: right
+sidebar: bottom
 widgets:
 - connection_information
 - links
-- archive
-- category
-- recent_posts
-- tag
-- tagcloud
+- rss
 
 # Miscellaneous
 google_analytics:

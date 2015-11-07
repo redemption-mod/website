@@ -1,0 +1,280 @@
+title: Spell changes
+slug: spell-changes
+---
+
+include ../../../themes/redemptionmod/layout/_mixins/all.jade
+
+p Various spells were changed on Redemption to make them more balanced with the other parts of the world.
+
+p Changes are indicated by the list at the end of the spell description
+
+p Filter by name (can be changed into a full text search easily if we want)
+
+input(type='text' placeholder='Search').quicksearch
+
+p Sort by (first click ascending, second descending):
+
+div.sort-by-button-group
+  button(data-sort-value='name').button Name
+  button(data-sort-value='spell_level').button Spell level
+
+p Both sort and filter can be used in conjunction
+
+hr.full
+
+div.spells-wrapper
+  +spell('Hellball', 'Level Epic', 'Requires Spellcraft 32').testis
+    p The caster creates a ball of energy that does 10d6 points of acid, fire, electrical and sonic damage to all targets in its blast radius.
+
+    ul
+      li Damage 1 per caster level /4 d10 of each type (acid, cold, sonic, fire, electric) (max 500)
+      li Caster takes 10d6+25 magical
+
+  +spell('Greater Ruin', 'Level Epic', 'Requires Spellcraft 25')
+    p The caster deals 35d6 positive energy damage to a single target.
+    ul
+      li DC = 20 + ability mod for ½ .
+      li Damage 1d20 per 2 caster levels (max 400)
+
+  +spell("Bigby's Crushing Hand", 'Level 9')
+    p.
+      A giant hand appears and attacks the target. If it hits and succeeds in a grapple check, the target is held fast for the duration of the spell and suffers 2d6+12 points of damage each round (1 round/level). #[br]
+      Grapple Check = d20 + ability mod + caster level + 12 – 1 vs. Target AC #[br]
+      Grapple DC Mage = d20 + ability mod + caster level +12 + 4 vs. #[br]
+      Grapple DC Target = d20 + STR mod + BAB + Size
+
+    ul
+      li Damage 3d6+level (max 48)
+      li Rounds 1d4
+      li Grapple Check = ability mod + caster level + 10 vs. Target AC
+      li Grapple DC Target = d20 + STR mod + BAB + Size + 20
+
+  +spell('Gate', 'Level 9')
+    p Summons a Balor to the casters side. Hostile if caster is not protected from evil, magic circle against evil or aura versus evil. Lasts 1 round/level
+
+    ul
+      li Summons is always loyal to caster
+      li Summons scaled based on caster level:
+      li 17- 25 = lvl 20 Planar Demon
+      li 26 - 33 = lvl 30 Planar Demon
+      li 34 - 40 = lvl 35 Planar Demon
+
+  +spell("Weird", 'Level 9')
+    p Failed will save forces touch attack of spell. If touched, fortitude save is made against death. A successful fortitude save still takes 3d6 magical damage. Creatures with 4 HD or less die instantly. Immunity to mind or fear renders this spell ineffective. Allows SR.
+
+    ul
+      li Damage 3d6 +1/caster level magical (max 58)
+      li Affects all within area of effect
+      li Won’t affect caster or those within 5 foot of caster
+      li Instant Death creatures 10 HD or less
+
+  +spell("Wail of the Banshee", 'Level 9')
+    p Failed fortitude save causes instant death a maximum 1 per caster level. Allows SR.
+
+    ul
+      li Maximum deaths 1 per 4 caster levels
+      li Affects all within area of effect
+      li Won’t affect caster or those within 5 foot of caster
+
+  +spell("Storm of Vengeance", 'Level 9')
+    p Each round (10 max), those in area of effect take 3d6 acid damage. Those that also fail a reflex save take an additional 6d6 electrical damage and are stunned 1 round. Allows SR.
+
+    ul
+      li Damage 6d6 electric (+ 1 /caster level Druid) (max 76)
+      li Damage 6d6 acid (+1 /caster level Druid) (max 76)
+      li Affects all within area of effect except caster
+
+  +spell("Undeath’s Eternal Foe", 'Level 9')
+    p All allies in area receive immunity to: Negative Energy, Level/Energy Drain, Ability Score Decrease, Poison, Disease and, gain +4 deflection AC. Duration is 1 round/level.
+
+    ul
+      li Duration 1d8+1 rounds
+
+  +spell("Meteor Swarm", 'Level 9')
+    p Rains fiery balls into area of effect. All those outside 5 foot perimeter of caster take 20d6 fire damage. Reflex save for ½. Allows for SR.
+
+    ul
+      li  Damage 1d8 per caster level (max 320)
+
+  +spell("Earthquake", 'Level 9', 'Cast at level 15 Cleric')
+    p The caster causes a massive earthquake around himself, causing 1d6 points of damage per caster level (to a maximum of 10d6) to all creatures in the area of effect. Caster is not affected by earthquake.
+
+    ul
+      li Damage 1d6 per caster level Clerics (max 240)
+      li Damage 1d8 per caster level Druids (max 320)
+
+  +spell("Time Stop", 'Level 9')
+    ul
+      li Disable
+
+  +spell('Bombardment', 'Level 8')
+    p Rocks fall from the sky, causing 1d8 points of damage per caster level (to a maximum of 10d8) to all enemies in the area.
+
+    ul
+      li Damage 1d8 per caster level (max 320)
+
+  +spell('Finger of Death', 'Level 8', 'Cast at level 13 Mage')
+    p The target creature must make fortitude save or die. If they succeed, they still take 3d6 points of damage +1 point per caster level.
+
+    ul
+      li Damage 1d6 per caster level /2 + 1 per caster level on save fail (max 160)
+
+  +spell('Sunbeam', 'Level 8')
+    p The caster summons a globe of divine radiance to blind and burn those within the area of effect. Undead take 1d6 points of divine damage per caster level, to a maximum of 20d6. All other monster types take 3d6 points of divine damage, and are blinded for 3 rounds. A successful reflex save halves the damage for undead and voids blindness for others.
+
+    ul
+      li Damage 1d4 (no cap) per caster level to undead (max 160)
+      li Damage 1d6 per ½ caster level to others (max 120)
+
+  +spell('Greater Sanctuary', 'Level 8')
+    p Caster becomes ethereal. No other creature can detect the caster but attacking or performing hostile acts will make the etherealness vanish. Duration is 1 turn per caster level.
+
+    ul
+      li Duration 1d2 turns- can be extended (max 4 minutes)
+
+  +spell("Word of Faith", 'Level 7')
+    p A wave of divine energy blasts all enemy creatures within the area of effect. All enemies within the area are stunned for 1 round /2 levels. Those with 4 hit dice = killed instantly, 5~7 = stunned, confused and blinded, 8~11 = stunned and blinded, 12+ = blinded. Any hostile summoned creatures are returned to their home planes.
+
+    ul
+      li 7 HD or less = Instant Death
+      li 8 HD ~ 20 HD = stunned, confused, blinded + 2d4 +1/caster level divine damage
+      li Caster level 21, 21 HD ~ 35 HD = stunned, blinded + 2d6 +1/caster level divine damage
+      li Caster level 36, 36 HD and higher = blinded + 2d8 +1/caster level divine damage
+      li Duration stunned, confused or blinded 1d4+1 rounds
+
+  +spell("True Seeing", 'Level 7', 'Cast at level 11 Mage, 9 Cleric (4 w/knowledge, 3 w/animal domains)')
+    p Can see through sanctuary, invisibility and automatically spots hidden creatures for 1 turn/level.
+
+    ul
+      li +10 Spot, +10 Listen
+      li Ultravision
+      li Duration 1 round/level
+
+  +spell("Bigby’s Grasping Hand", 'Level 7')
+    p.
+      A giant hand appears and attacks the target. If the hand hits and succeeds in a grapple check, the opponent will be held for the duration of the spell (1/level). #[br]
+      To Hit Check = d20 + caster level + (ability mod + 10) –1 vs. AC #[br]
+      Grapple DC Mage = d20 + ability mod + caster level +10 + 4 vs. #[br]
+      Grapple DC Target = d20 + STR mod + BAB + Size
+
+    ul
+
+      li To Hit Check = ability mod + caster level + 10 vs. Target AC
+      li Grapple DC Target = d20 + STR mod + BAB + Size + 20
+      li Rounds 1d4
+      li All ties go to the caster
+
+  +spell('Stonehold', 'Level 6')
+    p Creates a cloud that paralyzes any creatures caught within its radius. Creatures failing their will save are encased in stone for 1d6 rounds.
+
+    ul
+      li No longer affects caster
+
+  +spell('Crumble', 'Level 6')
+    p This spell inflicts 1d6 points of damage per caster level to a selected construct (to a maximum of 15d6). This spell does not affect living creatures.
+
+    ul
+      li Damage 1d6 per caster level no cap (max 240)
+
+  +spell('Greater Dispelling', 'Level 6', 'Cast at level 13 Bard')
+    p Single or multiple targets, removes effects at 1d20 + 1/level (15 max) vs. DC 11 + effects caster level. Maximum effectivness is against a level 24 caster.
+
+    ul
+      li Remove 15 max cap (1d20 + 1/level) vs. DC 11 + effects caster level
+
+  +spell('Inflict/Cure Critical Wounds', 'Level 4')
+    p Touch attack, inflicts/cures 4d8 + 1/level (20 max). Will save for half.
+
+    ul
+      li Damage 4d20 + 1/level no cap (max 120)
+
+  +spell('Improved Invisibility', 'Level 4')
+    p Creature becomes invisible. After attacking or casting a spell creature becomes partially visible but retaines 50% concealment. Duration 1 turn/level.
+
+    ul
+      li 30% concealment
+
+  +spell('War Cry', 'Level 4')
+    p A powerful shout that grants +2 to attack and damage of the caster and causes fear in those who fail a will save. Duration 1 round/level.
+
+    ul
+      li Scale to +1 per 4 caster level
+      li Max +9
+      li Damage is Magical
+      li Duration 2 turns (can be extended to 4) fear lasts a set 4 rounds
+
+
+  +spell('Blade Thirst', 'Level 3', 'Cast at level 12 Ranger')
+    p You grant a slashing weapon a +3 enhancement bonus. If targeted on a creature, the spell will enchant the weapon in the primary hand of the target.
+
+    ul
+      li Levels 1~10 = +3 enhancement
+      li Levels 11~18 = +5 enhancement
+      li Levels 19~24 = +6 enhancement
+      li Levels 25~35 = +8 enhancement
+      li Levels 36~40 = +9 enhancement
+
+  +spell('Flame Arrow', 'Level 3')
+    p 1 arrow per 4 caster levels (starting at level 5) for 4d6 fire damage per arrow. Reflex save for half.
+
+    ul
+      li 1 arrow per 8 caster levels (max 5 arrows- 120 dmg)
+
+  +spell('Inflict/Cure Serious Wounds', 'Level 3')
+    p Touch attack, inflicts/cures 3d8 + 1/level (15 max). Will save for half.
+
+    ul
+      li Damage 3d8 + 1/level no cap (max 64)
+
+  +spell('Displacement', 'Level 3')
+    p 50% concealment 1 round/level
+
+    ul
+      li 20% concealment
+
+  +spell('Wounding Whispers', 'Level 3')
+    p Magical shroud around caster damaging all who enter for 1d6 + 1/level sonic. Duration 1 round/level.
+
+    ul
+      li Damage 3d8 +1/level no cap (max 64)
+
+
+  +spell('Greater Magic Fang', 'Level 2', 'Cast at level 11 Ranger')
+    p This spell strengthens the caster's animal companion, giving it +1 to hit and +1 to damage for every three levels of the caster (maximum of +5). It also grants the creature damage reduction and enhancement bonus equal to the hit/damage bonus given. (lvl 5= +1, lvl 6= +2, lvl 9= +3, lvl 12= +4, lvl 15= +5)
+
+    ul
+      li Level 5 = +2 (DR = +3/3)
+      li Level 6 = +3 (DR = +4/4)
+      li Level 9 = +4 (DR = +5/5)
+      li Level 12/15 = +5 (DR = +6/6)
+      li Level 16/20 = +6 (DR = +7/7)
+      li Level 21/25 = +7 (DR = +8/8)
+      li Level 26/34 = +8 (DR = +9/9)
+      li Level 35/40 = +8 (DR = +10/10)
+
+  +spell('Inflict/Cure Moderate Wounds', 'Level 2')
+    p Touch attack, inflicts/cures 2d8 + 1/level (10 max). Will save for half.
+
+    ul
+      li Damage 2d8 + 1/level no cap (max 56)
+
+  +spell('Soundburst', 'Level 2')
+    p All creatures in area (medium) take 1d8 damage and a will save or stunned 2 rounds.
+
+    ul
+      li Damage 2d8 + 1/level no cap (max 56)
+
+  +spell('Divine Favor', 'Level 1')
+    p The caster gains a +1 bonus to attack and weapon damage rolls for every three caster levels to a max of +5 for 1 turn. (lvl 1= +1, lvl 6= +2, lvl 9= +3, lvl 12= +4, lvl 15= +5)
+
+    ul
+      li Scale to +1 per 4 caster level
+      li Max +9
+      li Damage is Magical
+      li Duration 2 turns (can be extended to 4)
+
+  +spell('Sanctuary', 'Level 1')
+    p Target becomes ethereal. No other creature can detect the target but attacking or performing hostile acts will make the etherealness vanish. Duration is 1 round per caster level.
+
+    ul
+      li Duration 1d8 rounds- can be extended (max 1 min. 36 secs)

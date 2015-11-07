@@ -1,73 +1,14 @@
-// Partial fix - need to have it hidden so the search bar gets 'cut off', but
-// also need to keep it visible so the submenu doesn't get cut off ...
-#header-outer
-  overflow hidden
-#header-inner
-  overflow visible
+@import 'custom/nav'
+@import 'custom/footnotes'
+@import 'custom/spells'
+@import 'custom/header'
 
-.main-nav-link
-  opacity .8
+img
+  max-width 100%
 
-.current
-  opacity 1
-  color #fff
-
-
-.main-nav-list
+.clearfix
   clearfix()
 
-  a
-    float none
-    cursor pointer
-
-  > li
-    float left
-
-    > a
-      padding 15px
-
-    &.has-subnav
-      position relative
-
-      &:hover
-        .main-nav-sublist
-          visibility visible
-          opacity 1
-
-.main-nav-sublist
-  clearfix()
-
-  position absolute
-  left 0
-  right 0
-  background rgba(0,0,0,.8)
-  z-index 10
-
-  border-top 1px solid #fff
-  padding-top 10px
-  visibility hidden
-  opacity 0
-  z-index 10
-
-  transition: opacity .2s
-
-  .subnav
-    float none
-    padding 5px 15px
-    text-align center
-    float none
-
-
-#mobile-nav
-  overflow-y auto
-
-.mobile-nav-list
-  .has-subnav
-    > a
-      padding-bottom 5px
-
-.mobile-nav-sublist
-  margin 0 20px 10px 30px
-
-  li a
-    padding 5px 15px 5px 10px
+hr.full
+  border-style solid
+  margin 30px 0

@@ -1,0 +1,41 @@
+#banner
+  background url('images/banner.jpg') center #000
+  background-size cover
+
+#header-title
+  top auto
+  bottom 20px
+  height auto
+
+#main-nav
+  margin-right 80px
+
+#sub-nav
+  position absolute
+  right 0
+  top 0
+
+@media mq-tablet
+  .main-nav-link
+    display none
+
+  #main-nav-toggle
+    display block
+
+  #mobile-nav
+    position: absolute
+    top: 0
+    left: 0
+    width: mobile-nav-width
+    height: 100%
+    background: color-mobile-nav-background
+    border-right: 1px solid #fff
+
+  .mobile-nav-link
+    display: block
+    color: color-grey
+    text-decoration: none
+    padding: 15px 20px
+    font-weight: bold
+    &:hover
+      color: #fff

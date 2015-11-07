@@ -1,0 +1,63 @@
+spell-margin = .86%
+
+#page-spell-changes
+  .article-inner
+    clearfix()
+    background none
+    box-shadow none
+    border none
+    border-radius initial
+
+
+  .article-header
+  .article-entry
+  .article-footer
+    margin-left 0
+    margin-right 0
+    padding-left 0
+    padding-right 0
+
+  .article-header
+    margin-bottom 20px
+
+.spells-wrapper
+  margin-left -(spell-margin)
+  margin-right -(spell-margin)
+
+.spell
+  @extend $block
+  column(9/2)
+  padding 0
+  margin 0 spell-margin 20px spell-margin
+
+  @media mq-mobile
+    column(12)
+    margin-bottom 20px
+  @media mq-tablet
+    column(12)
+    margin-bottom 20px
+
+  .spell-inner
+    margin 15px
+
+  .meta-wrapper
+    margin-bottom 20px
+
+  .name
+    float left
+    margin 10px 0 0 0
+    font-size 18px
+    line-height 18px
+
+  .spell-level
+    float right
+    margin 10px 0 0 0
+    color #999
+    font-size 14px
+    line-height 18px
+
+  .requirements
+    margin -14px 0 0 0
+    color #999
+    font-size 14px
+    line-height 16px

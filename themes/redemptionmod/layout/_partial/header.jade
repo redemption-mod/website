@@ -5,7 +5,8 @@ header#header
   div#header-outer.outer
     div#header-title.inner
       h1#logo-wrap
-        a(href=url_for())#logo= config.title
+        a(href=url_for() title=config.title)#logo
+          img(src=url_for('css/images/logo.png'))
       if theme.subtitle
         h2#subtitle-wrap
           a(href=url_for())#subtitle= theme.subtitle
