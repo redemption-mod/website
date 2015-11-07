@@ -1,29 +1,29 @@
 # Header
 menu:
-  Home: /
+  Home:
   Game characteristics:
-    LINK: /game-characteristics
-    Player vs player: /game-characteristics/player-vs-player
-    Clans: /game-characteristics/clans
-    Experience points: /game-characteristics/experience-points
-    Map of Dominia: /game-characteristics/map-of-dominia
-    Remorts: /game-characteristics/remorts
+    LINK: game-characteristics
+    Player vs player: game-characteristics/player-vs-player
+    Clans: game-characteristics/clans
+    Experience points: game-characteristics/experience-points
+    Map of Dominia: game-characteristics/map-of-dominia
+    Remorts: game-characteristics/remorts
   Game changes:
-    LINK: /game-changes
-    Spell changes: /game-changes/spell-changes
-    Feat changes: /game-changes/feat-changes
+    LINK: game-changes
+    Spell changes: game-changes/spell-changes
+    Feat changes: game-changes/feat-changes
   Server information:
-    LINK: /server-information
-    Connection information: /server-information/connection-information
-    Server requirements: /server-information/server-requirements
-    History: /server-information/server-history
-    Meet the team: /server-information/meet-the-team
+    LINK: server-information
+    Connection information: server-information/connection-information
+    Server requirements: server-information/server-requirements
+    History: server-information/server-history
+    Meet the team: server-information/meet-the-team
   Guides, tips and tricks:
-    LINK: /guides
-    NWN setup tips: /guides/test
+    LINK: guides
+    NWN setup tips: guides/test
 
 
-rss: /atom.xml
+rss: atom.xml
 
 # Content
 excerpt_link: Read More
@@ -39,7 +39,7 @@ widgets:
 
 # Miscellaneous
 google_analytics:
-favicon: /favicon.png
+favicon: favicon.png
 twitter:
 google_plus:
 fb_admins:

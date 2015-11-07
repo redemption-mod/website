@@ -8,6 +8,10 @@ nav#mobile-nav
         +get_current_class(link)
         li
           a(href=url_for(link) class='mobile-nav-link #{current}')= item
+      else if link === null
+        li
+          - current = page.path === 'index.html' ? 'current': ''
+          a(href=url_for(' ') class='mobile-nav-link #{current}')= item
       else
         +get_current_class(link.LINK)
         li.has-subnav
