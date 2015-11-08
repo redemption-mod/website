@@ -23,7 +23,7 @@ changes-list-margin = .75%
   .last-updated
     @extend $block
     float right
-    margin 0
+    margin 1em
     padding 1.6em
     text-align center
 
@@ -40,15 +40,15 @@ changes-list-margin = .75%
 
 .changes-list
   @extend $block
-  column(9/2)
+  column(columns / 2)
   padding 0
   margin 0 changes-list-margin 20px changes-list-margin
 
   @media mq-mobile
-    column(12)
+    column(columns)
     margin-bottom 20px
   @media mq-tablet
-    column(12)
+    column(columns)
     margin-bottom 20px
 
   .changes-list-inner
