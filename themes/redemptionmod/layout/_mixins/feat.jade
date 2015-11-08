@@ -1,0 +1,13 @@
+mixin feat(name, feat_level, requirements)
+  - name = name || 'Feat name'
+  div.changes-list.feat
+    div.changes-list-inner.feat-inner&attributes(attributes)
+      div.clearfix.meta-wrapper
+        h4.name!= name
+        if feat_level
+          p.feat-level!= feat_level
+      if requirements
+        p.requirements!= requirements
+      if block
+        block
+

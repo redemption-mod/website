@@ -1,0 +1,194 @@
+title: Feat changes
+slug: feat-changes
+---
+
+include ../../../themes/redemptionmod/layout/_mixins/all.jade
+
+div.last-updated
+  p.update-time Last updated: #[b 2015-11-1]
+
+  p: a(href='http://redemptionreloaded.proboards.com/thread/4/feats' target='_blank') Forum post
+
+p Various feats were changed on Redemption to make them more balanced with the other parts of the world.
+
+p Filter by name (can be changed into a full text search easily if we want)
+
+input(type='text' placeholder='Search').quicksearch
+
+p Sort by (first click ascending, second descending):
+
+div.sort-by-button-group
+  button(data-sort-value='name').button Name
+
+p Both sort and filter can be used in conjunction
+
+p TODO: Style the search bar (like the one on top) and buttons (figure it out)
+
+hr.full
+
+div.changes-list-wrapper.feats-wrapper
+  +feat('Barbarian Rage')
+    p A Barbarian can enter a rage that grants them superhuman strength. Starting at 1st level, they may enter the rage once per day, which increases by one use per day every 4 levels until level 15 when it becomes a greater rage. The bonuses applied are:
+
+    ul
+      li +4 Strength and Constitution
+      li +2 to will saves in exchange for a –2 AC
+
+    p.changes Changes
+
+    ul.changes-ul
+      li +2 AB, Damage, Fortitude, Concentration, Discipline, Intimidate
+      li Class level x 5 Temp Hitpoints
+
+  +feat('Barbarian Greater Rage')
+    p A Barbarians rage transforms at level 15 to a greater rage. This replaces the normal rage. Use of the greater rage is 4 times a day at level 15, 5 times a day at 16 and is increased by one every 4 levels into epic levels. The bonuses applied are:
+
+    ul
+      li +6 Strength and Constitution
+      li +3 to will saves in exchange for a –2 AC
+
+    p.changes Changes
+
+    ul.changes-ul
+      li +4 AB, Damage, Fortitude, Concentration, Discipline, Intimidate, Will
+      li Class level x 10 Temp Hitpoints
+
+  +feat('Barbarian Mighty Rage')
+    p The Barbarian has honed their fighting skills to epic levels. 3 times a day, the Barbarian may also enter a frenzied state of a the Mighty Rage. The bonuses applied (above and beyond any already applied rages) are:
+
+    ul
+      li +8 Strength and Constitution
+      li +4 to will saves
+
+    p.changes Changes
+
+    ul.changes-ul
+      li +8 AB, Damage, Fortitude, Concentration, Discipline, Intimidate, Will
+      li Class level x 20 Temp Hitpoints
+
+  +feat('Barbarian Terrifying Rage')
+    p When raging, enemies with HD less than the barbarian makes a will save against the barbarians intimidate skill + 1d10, or be feared for 1d6 rounds. Opponents with up to twice the barbarians HD will not flee but instead receive a –2 penalty to AB and all saves. Creatures with 2 times the barbarians HD are unaffected.
+
+    p.changes Changes
+
+    ul.changes-ul
+      li DC 1d20 + intimidate skill
+      li Failed saves receive –4 to AB and Universal Saves for 1d6 rounds
+
+  +feat('Craft Harper Item')
+    p At 5th level, Harper Scouts can create a magical potion. The cost of each potion is 60 gold and 5 XP. The potions created are Cats Grace and Eagle’s Splendor.
+
+    p.changes Changes
+
+    ul.changes-ul
+      li 1000 gp and 100 XP per potion
+      li Potion Created: Liquid Smoke- Charisma 1d3+1, +2 Universal Saves, +6 Regeneration
+      li Potion Created: Menergy- Constitution 1d3+1, +3 AB, +3 AC
+
+  +feat('Tymora’s Smile')
+    p Starting at 3rd level, the Harper Scout can cast a spell once a day. The effects of the spell last 5 turns and grant the following bonuses:
+
+    ul
+      li +2 Universal Saves
+
+    p.changes Changes
+
+    ul.changes-ul
+      li Duration 20 turns
+      li Universal Saves +10
+      li AC +10 (dodge)
+      li Effects cannot be dispelled
+
+  +feat('Wholeness of Body')
+    p At 7th level, Monks can heal themselves once per day. Healing is 2 times the monks level.
+
+    p.changes Changes
+
+    ul.changes-ul
+      li 8 times monk level
+
+  +feat('Shadow Evade')
+    p Starting at 4th level, the Shadow Dancer can cast Shadow Evade three times a day. The effects of the spell last 5 rounds and grant the following bonuses:
+
+    ul
+      li 5% concealment
+      li Damage reduction 5/+1
+      li +1 to armor class
+
+    p This improves every 2 levels to 10 then, every 5 levels to 30 as follows:
+
+    ul
+      li 6: 5/+2 DR, 10% Concealment, +2 AC
+      li 8: 10/+2 DR, 15% Concealment, +3 AC
+      li 10: 10/+3 DR, 20% Concealment, +4 AC
+      li 15: 12/+4 DR, 20% Concealment, +4 AC
+      li 20: 14/+5 DR, 20% Concealment, +4 AC
+      li 25: 16/+6 DR, 20% Concealment, +4 AC
+      li 30: 18/+7 DR, 20% Concealment, +4 AC
+
+    p.changes Changes
+
+    ul.changes-ul
+      li Duration is 15 rounds
+      li 4: 5/+3 DR, 10% Concealment, +1 AC
+      li 6: 5/+4 DR, 15% Concealment, +2 AC
+      li 8: 10/+5 DR, 20% Concealment, +3 AC
+      li 10: 10/+6 DR, 25% Concealment, +4 AC
+      li 15: 12/+7 DR, 30% Concealment, +5 AC
+      li 20: 14/+8 DR, 35% Concealment, +6 AC
+      li 25: 16/+9 DR, 40% Concealment, +7 AC
+      li 30: 18/+10 DR, 45% Concealment, +8 AC
+
+  +feat('Imbue Arrow')
+    p Starting at 2nd level, the Arcane Archer can shoot an arrow three times a day that explodes on impact as a fireball spell, doing fire damage to all hostile creatures in the area. Creatures are allowed a reflex save w/ a DC of 10 + AA level + dexterity modifier. Damage is as follows:
+
+    ul
+      li Imbue: 10d6 + 1d6 per 2 AA levels above 10 - Fire
+      li Magical: Enchant Arrow bonus
+      li Base: base weapon + Strength mod + Weapon Spec. or E Weapon Spec.
+
+    p.changes Changes
+
+    ul.changes-ul
+      li Reflex save halves damage and avoids Knockdown effect
+      li Imbue: 10d8 Electric + 10d8 Sonic + 1d8 per 2 AA levels above 10 + Knockdown 1 round
+      li Magical: enchant arrow bonus d6 (applied independant of save)
+      li Radius increased from Huge (6.6 meters) to Colossal (10 meters)
+
+  +feat('Seeker Arrow')
+    p Starting at 4th level, the Arcane Archer can shoot an arrow once a day (twice a day at 6th level) that cannot miss its target. Damage is as follows:
+
+    ul
+      li Base: (base weapon + Strength Mod + Weapon Spec. or E. Weapon Spec.) x 2
+      li Magical: Enchant Arrow Bonus
+
+    p.changes Changes
+
+    ul.changes-ul
+      li Base: (base weapon + strength mod + Weapon Spec. or E. Weapon Spec.) x 4
+      li Magical: enchant arrow bonus d20
+
+  +feat('Hail of Arrows')
+    p At 8th level, the Arcane Archer can shoot a volley of arrows once a day that targets all creatures in the area to a maximum of one creature per Arcane Archer level. Damage is as follows:
+
+    ul
+      li Base: base weapon + Strength Mod + Weapon Spec. or E. Weapon Spec.
+      li Magical: Enchant Arrow Bonus
+
+    p.changes Changes
+
+    ul.changes-ul
+      li Magical: enchant arrow bonus d8
+
+  +feat('Arrow of Death')
+    p At 10th level, the Arcane Archer can fire an arrow once per day that upon the successful hit of a creature, forces that creature to make a fortitude save or be slain. The DC of the save is 20. Damage on a successful save is as follows:
+
+    ul
+      li Base: base weapon + Strength Mod + Weapon Spec. or E. Weapon Spec.
+      li Magical: Enchant Arrow Bonus
+
+    p.changes Changes
+
+    ul.changes-ul
+      li DC 26 + Arrow Enchantment Bonus
+      li Magical: enchant arrow bonus d12
