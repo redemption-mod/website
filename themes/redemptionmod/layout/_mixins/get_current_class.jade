@@ -1,5 +1,6 @@
 mixin get_current_class(link)
   -
-    newlink = link.replace(/^\/+|\/+$/g, '')
-    current = is_current(newlink) ? 'current' : ''
+    newlink = link.replace(/^\/+|\/+$/g, '');
+    current = is_current(newlink) ? 'current' : '';
+    external = link.slice(0, 4) == 'http'
 

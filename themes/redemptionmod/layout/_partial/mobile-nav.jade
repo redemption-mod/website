@@ -7,18 +7,18 @@ nav#mobile-nav
       if typeof link === 'string'
         +get_current_class(link)
         li
-          a(href=url_for(link) class='mobile-nav-link #{current}')= item
+          a(href=url_for(link) class='mobile-nav-link #{current}' target=external ? '_blank': undefined)= item
       else if link === null
         li
           - current = page.path === 'index.html' ? 'current': ''
-          a(href=url_for(' ') class='mobile-nav-link #{current}')= item
+          a(href=url_for(' ') class='mobile-nav-link #{current}' target=external ? '_blank': undefined)= item
       else
         +get_current_class(link.LINK)
         li.has-subnav
-          a(href=url_for(link.LINK) class='mobile-nav-link #{current}')= item
+          a(href=url_for(link.LINK) class='mobile-nav-link #{current}' target=external ? '_blank': undefined)= item
           ul.mobile-nav-sublist
             for sublink, subitem in link
               if subitem != 'LINK'
                 +get_current_class(sublink)
                 li
-                  a(href=url_for(sublink) class='mobile-nav-link mobile-subnav #{current}') - #{subitem}
+                  a(href=url_for(sublink) class='mobile-nav-link mobile-subnav #{current}' target=external ? '_blank': undefined) - #{subitem}
