@@ -26,21 +26,23 @@ Parts of the site are done, parts aren't. Mark the progress below:
 | Home                      |                      |
 | Game characteristics      |                      |
 | -- Player vs player       | Done                 |
-| -- Clans                  |                      |
+| -- Clans                  | Partially done       |
 | -- Experience points      | Done                 |
 | -- Map of Dominia         | Done                 |
 | -- Remorts                | Need new Remort info |
-| Game changes              |                      |
-| -- Spell changes          | Content done         |
-| -- Feat changes           |                      |
+| Game changes              | Done                 |
+| -- Spell changes          | Done                 |
+| -- Feat changes           | Done                 |
 | Server information        |                      |
 | -- Connection information |                      |
 | -- Server requirements    |                      |
 | -- History                |                      |
 | -- Meet the team          |                      |
-| Guides, tips and tricks   |                      |
-| -- NWN setup tips         |                      |
+| Guides, tips and tricks   | Done                 |
+| -- NWN setup tips         | Done                 |
 
-## General things to do
+## General things left to do
 
-Search for 'TODO:' in the source code.
+* Search for 'TODO:' in the source code.
+* General sprucing up of text, adding some images, ...
+* Adding custom descriptions for crawlers
