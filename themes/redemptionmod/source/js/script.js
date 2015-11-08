@@ -166,7 +166,7 @@
     sortAscending: sortAscending
   });
 
-  var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+  var $quicksearch = $('.changes-list-filter-input').keyup(debounce(function(){
     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
     $iso_spells.isotope();
   }, 200 ) );
@@ -177,12 +177,16 @@
     var hadAscending = $(this).hasClass('ascending');
 
     $('.sort-by-button-group button').removeClass(
-      'is-checked').removeClass('ascending');
+      'is-checked').removeClass('ascending').removeClass('descending');
 
     if (hadAscending) {
       sortAscending = false;
       $(this).removeClass('ascending');
+      $(this).addClass('descending');
+      console.log('that');
     } else {
+      console.log('this');
+      $(this).removeClass('descending');
       $(this).addClass('ascending');
     }
 

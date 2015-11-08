@@ -11,18 +11,13 @@ div.last-updated
 
 p Various feats were changed on Redemption to make them more balanced with the other parts of the world.
 
-p Filter by name (can be changed into a full text search easily if we want)
+div.changes-list-filter
+  input(type='text' placeholder='Filter by name').changes-list-filter-input
 
-input(type='text' placeholder='Search').quicksearch
-
-p Sort by (first click ascending, second descending):
+p.sort-text Sorting - first click ascending, second descending
 
 div.sort-by-button-group
-  button(data-sort-value='name').button Name
-
-p Both sort and filter can be used in conjunction
-
-p TODO: Style the search bar (like the one on top) and buttons (figure it out)
+  button(data-sort-value='name'): p Name #[i.icon-ascending.fa.fa-sort-up] #[i.icon-descending.fa.fa-sort-down]
 
 hr.full
 

@@ -82,3 +82,60 @@ changes-list-margin = .75%
 
   .changes-ul
     margin-top .5em
+
+.changes-list-filter
+  width 85%
+  max-width 250px
+
+  &:focus
+    border 1px solid #000
+
+.changes-list-filter-input
+  border: 1px solid transparent
+  background: none
+  color: color-default
+  width: 100%
+  font: 13px font-sans
+  outline: none
+  background #fff
+  padding 5px 15px
+  border-radius 15px
+  &::-webkit-search-results-decoration
+  &::-webkit-search-cancel-button
+    -webkit-appearance: none
+
+  &:focus
+    border 1px solid color-default
+
+p.sort-text
+  margin-bottom .5em
+
+.sort-by-button-group
+  button
+    @extend $block
+    padding .5em 1em
+    margin-right .75em
+    cursor pointer
+    color color-default
+    font-size 75%
+
+    &:focus
+      border 1px solid color-grey
+      outline none
+    &.is-checked
+      border 1px solid color-default
+
+    .icon-ascending
+    .icon-descending
+      display none
+
+    &.ascending
+      .icon-ascending
+        display inline-block
+    &.descending
+      .icon-descending
+        display inline-block
+
+    p
+      margin 0
+      padding 0
