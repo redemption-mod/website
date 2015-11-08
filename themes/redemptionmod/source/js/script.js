@@ -120,7 +120,7 @@
     setTimeout(function(){
       isMobileNavAnim = false;
     }, mobileNavAnimDuration);
-  }
+  };
 
   $('#main-nav-toggle').on('click', function(){
     if (isMobileNavAnim) return;
@@ -139,9 +139,17 @@
   // Custom part
 
   var qsRegex;
+  // Defaults for any list
+  var sortBy = 'name';
+  var sortAscending = true;
+  // Specifics for spell list
+  if ($('.spell-level').length !== 0) {
+    sortBy = 'spell_level';
+    sortAscending = false;
+  }
 
-  var $iso_spells = $('.spells-wrapper').isotope({
-    itemSelector: '.spell',
+  var $iso_spells = $('.changes-list-wrapper').isotope({
+    itemSelector: '.changes-list',
     layoutMode: 'masonry',
     filter: function() {
       // Search only on the name and level
@@ -152,10 +160,10 @@
     },
     getSortData: {
       name: '.name',
-      spelllevel: '.spell-level'
+      spell_level: '.spell-level'
     },
-    sortBy: 'spelllevel',
-    sortAscending: false
+    sortBy: sortBy,
+    sortAscending: sortAscending
   });
 
   var $quicksearch = $('.quicksearch').keyup( debounce( function() {

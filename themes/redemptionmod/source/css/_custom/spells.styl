@@ -1,13 +1,13 @@
-spell-margin = .86%
+changes-list-margin = .75%
 
 #page-spell-changes
+#page-feat-changes
   .article-inner
     clearfix()
     background none
     box-shadow none
     border none
     border-radius initial
-
 
   .article-header
   .article-entry
@@ -20,15 +20,29 @@ spell-margin = .86%
   .article-header
     margin-bottom 20px
 
-.spells-wrapper
-  margin-left -(spell-margin)
-  margin-right -(spell-margin)
+  .last-updated
+    @extend $block
+    float right
+    margin 0
+    padding 1.6em
+    text-align center
 
-.spell
+    p
+      margin-bottom 0
+
+    .update-time
+      margin 0
+      padding 0
+
+.changes-list-wrapper
+  margin-left -(changes-list-margin)
+  margin-right -(changes-list-margin)
+
+.changes-list
   @extend $block
   column(9/2)
   padding 0
-  margin 0 spell-margin 20px spell-margin
+  margin 0 changes-list-margin 20px changes-list-margin
 
   @media mq-mobile
     column(12)
@@ -37,7 +51,7 @@ spell-margin = .86%
     column(12)
     margin-bottom 20px
 
-  .spell-inner
+  .changes-list-inner
     margin 15px
 
   .meta-wrapper
@@ -61,3 +75,10 @@ spell-margin = .86%
     color #999
     font-size 14px
     line-height 16px
+
+  .changes
+    margin-bottom .5em
+    font-weight bold
+
+  .changes-ul
+    margin-top .5em
