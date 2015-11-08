@@ -12,7 +12,7 @@ if is_archive()
   if is_month()
     -
       var dat = new Date()
-      dat.setYear(page.year)
+      dat.setFullYear(page.year)
       dat.setMonth(page.month - 1)
       dat = date(dat, 'MMM YYYY')
 
